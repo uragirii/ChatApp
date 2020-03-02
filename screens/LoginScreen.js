@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ActivityIndicator, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
+import { Text, View, ActivityIndicator, StyleSheet, TextInput, TouchableOpacity, Image, ToastAndroid } from 'react-native';
 import {createUser} from '../Fire'
 
 
@@ -22,6 +22,9 @@ export default class LoginScreen extends Component {
                 this.props.navigation.navigate("User", snapshot)
             })
         }
+        else{
+            ToastAndroid.show("Please enter a Username to continue", ToastAndroid.SHORT)
+        }
     }
 
   render() {
@@ -43,7 +46,7 @@ export default class LoginScreen extends Component {
                   />
               </View>
               <View style={{marginHorizontal :32}}>
-                  <Text style={styles.header} >Username</Text>
+                  <Text style={styles.header} >Choose a Username</Text>
                   <TextInput 
                       style= {styles.input} 
                       placeholder="Username"
@@ -54,7 +57,7 @@ export default class LoginScreen extends Component {
                   />
                   <View style={{alignItems : "flex-end", marginTop:64}}>
                       <TouchableOpacity style={styles.continue} onPress={this.getData}>
-                          <Text>-></Text>
+                          <Text style={{color:"#FFF"}}>Go!</Text>
                       </TouchableOpacity>
                   </View>
               </View>

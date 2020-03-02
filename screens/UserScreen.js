@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, FlatList, TouchableOpacity, TextInput, Button } from 'react-native'
+import { Text, StyleSheet, View, FlatList, TouchableOpacity, TextInput, Button, ToastAndroid } from 'react-native'
 import database from '@react-native-firebase/database'
 
 
 function Item({ title , props, userId}) {
     return (
       <TouchableOpacity style={styles.item} onPress={() => {props.navigation.navigate("Chat", {chatId : title, user : userId})}}>
-        <Text style={styles.title}>Chat Room No : {title}</Text>
+        <Text style={styles.title}>Chat Room ID : {title}</Text>
       </TouchableOpacity>
     );
   }
@@ -65,7 +65,8 @@ export default class UserScreen extends Component {
         }
 
         return (
-            <View>
+            <View style={{marginHorizontal :20}}>
+                <Text style={styles.header} >Chat Rooms</Text>
                 {listData}
                 <TextInput 
                       style= {styles.input} 
@@ -75,7 +76,18 @@ export default class UserScreen extends Component {
                       }}
                       value = {this.state.name}
                   />
-                  <Button style={{margin:10}} title="Join Room" onPress={this.addChatRoom} />
+                  <Button style={{borderRadius : 30}} title="Join Room" onPress={()=>{
+                      if(this.state.chatRooms.includes(this.state.newRoom)){
+                          // Implemment something
+                          ToastAndroid.show('Chat Room already joined', ToastAndroid.SHORT)
+                      }
+                      else if(this.state.newRoom === "") { 
+                        ToastAndroid.show('Chat Room ID cannot be empty', ToastAndroid.SHORT)
+                      }
+                      else{
+                        this.addChatRoom()
+                      }
+                  }} />
             </View>
         )
     }
@@ -83,18 +95,27 @@ export default class UserScreen extends Component {
 
 const styles = StyleSheet.create({
     item: {
-        backgroundColor: '#f9c2ff',
+        backgroundColor: '#Ab9',
         padding: 10,
-        marginVertical: 8,
-        marginHorizontal: 16,
+        marginVertical: 10,
+        marginHorizontal: 10,
+        borderRadius : 30,
       },
       input : {
-        margin : 10,
+        marginTop : 32,
+        marginBottom : 32,
         height : 50, 
         borderWidth : StyleSheet.hairlineWidth,
         borderColor : "#BAB7C3",
+        borderRadius : 30,
         paddingHorizontal : 16,
         color : "#514E5A",
         fontWeight : "600"
     },
+    header: {
+        fontWeight : "800",
+        fontSize : 25,
+        color : "#514E5A",
+        marginVertical : 15
+    }
 })
