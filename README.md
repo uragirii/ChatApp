@@ -1,5 +1,5 @@
 # ChatApp
-An anonymous chatting app where anyone can join chat room and message anyone. All you require is an username and you are good to go.
+An anonymous chatting app where anyone can join chat room and message anyone. All you require is an username and you are good to go. For Android Phones you can download APK from [here](https://drive.google.com/open?id=1784NbxigZISW0gm00-bHqKNjezRbDBQu). For iOS users, I have not made a built because you require a MacOS for that purpose and I use Windows. 
 
 The app uses Firebase as a backend and works on Real-time database of Firebase.
 
@@ -20,7 +20,7 @@ There are other dependencies also, but they are only  required by these modules 
 
 ![Login](/Screenshots/Login.jpg) ![Empty_Chatrooms](/Screenshots/Empty_Chatrooms.jpg)
 
-![ChatRooms](/Screenshots/ChatRooms.jpg) ![ChatScreens](/Screenshots/ChatScreens.jpg)
+![ChatRooms](/Screenshots/ChatRooms.jpg)![ChatScreens](/Screenshots/ChatScreens.jpg)
 
 # Todo
 
