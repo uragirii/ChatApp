@@ -18,13 +18,9 @@ There are other dependencies also, but they are only  required by these modules 
 
 # Screenshots
 
-![Login](/Screenshots/Login.jpg])
+![Login](/Screenshots/Login.jpg) ![Empty_Chatrooms](/Screenshots/Empty_Chatrooms.jpg)
 
-![Empty_Chatrooms](/Screenshots/Empty_Chatrooms.jpg])
-
-![ChatRooms](/Screenshots/ChatRooms.jpg])
-
-![ChatScreens](/Screenshots/ChatScreens.jpg])
+![ChatRooms](/Screenshots/ChatRooms.jpg) ![ChatScreens](/Screenshots/ChatScreens.jpg)
 
 # Todo
 
